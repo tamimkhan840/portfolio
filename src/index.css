@@ -1,0 +1,5 @@
+/* src/index.css বা src/global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
