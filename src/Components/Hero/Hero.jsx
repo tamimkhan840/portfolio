@@ -19,19 +19,19 @@ function Hero() {
         <div >
           <ul className="flex justify-center space-x-3 md:space-x-8 mt-6">
             <li className="text-green-700 text-xl md:text-2xl hover:bg-green-700 hover:text-white hover:scale-125 transition-transform border-[3px] border-green-700 p-2 rounded-full">
-              <a href=""><FaFacebook /></a>
+              <a href="https://www.facebook.com/hafeztamimkhan" target="_blank"><FaFacebook /></a>
             </li>
             <li className="text-green-700 text-xl md:text-2xl hover:bg-green-700 hover:text-white hover:scale-125 transition-transform border-[3px] border-green-700 p-2 rounded-full">
-              <a href=""><FaLinkedin /></a>
+              <a href="https://www.linkedin.com/in/tamim-khan-25aa7232b/" target="_blank"><FaLinkedin /></a>
             </li>
             <li className="text-green-700 text-xl md:text-2xl hover:bg-green-700 hover:text-white hover:scale-125 transition-transform border-[3px] border-green-700 p-2 rounded-full">
-              <a href=""><FaInstagram /></a>
+              <a href="https://www.instagram.com/hafeztamimkhan/" target="_blank"><FaInstagram /></a>
             </li>
             <li className="text-green-700 text-xl md:text-2xl hover:bg-green-700 hover:text-white hover:scale-125 transition-transform border-[3px] border-green-700 p-2 rounded-full">
-              <a href=""><FaGithub /></a>
+              <a href="https://github.com/tamimkhan840" target="_blank"><FaGithub /></a>
             </li>
             <li className="text-green-700 text-xl md:text-2xl hover:bg-green-700 hover:text-white hover:scale-125 transition-transform border-[3px] border-green-700 p-2 rounded-full">
-              <a href=""><FaTwitter /></a>
+              <a href="https://x.com/MdTamimKhan1919" target="_blank"><FaTwitter /></a>
             </li>
           </ul>
         </div>
