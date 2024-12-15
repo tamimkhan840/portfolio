@@ -7,10 +7,15 @@ function Hero() {
       <div className="flex flex-col items-center">
         <img src={profile} alt="Tamim Khan" className="rounded-2xl w-60  mb-4" />
         <h2 className="text-2xl">Hi</h2>
+
         <h1 className="text-5xl md:text-7xl font-bold">
           It&apos;s <span className="text-green-700">Tamim Khan</span>
         </h1>
-        <p className="text-2xl font-semibold mt-2">I&apos;m a Photographer</p>
+        <div className="text-2xl font-semibold mt-2">I&apos;m a
+          <div className="text-animation text-[34px] font-semibold min-w-[280px] relative mb-6">
+            <span className="relative before:content-['Web Developer'] text-green-700 before:text-[var(--main-color)] before:animate-words after:absolute after:bg-[var(--bg-color)] after:h-full after:right-[-8px] after:border-l-[2px] after:border-[#f1f1f1] after:animate-cursor after:w-[calc(100%+8px)]"></span>
+          </div>
+        </div>
         <p className="mt-4 w-11/12 md:w-8/12">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate sit saepe perspiciatis culpa rerum atque inventore, minus ut voluptatem ipsam quibusdam doloremque corporis, possimus quaerat porro distinctio beatae unde magni quod deserunt officia impedit amet repellendus! Tempora voluptate rem praesentium dicta ratione iure suscipit.
         </p>

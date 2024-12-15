@@ -1,5 +1,6 @@
 import  { useState } from 'react';
 import { FiMenu } from 'react-icons/fi';
+import { IoClose } from 'react-icons/io5';
 
 
 
@@ -13,18 +14,27 @@ const Header = () => {
 
       {/* Larger screen links */}
       <nav className="hidden md:flex space-x-4">
-        <a href="#home" className="hover:text-red-700">Home</a>
+        <a href="#Home" className="hover:text-red-700">Home</a>
         <a href="#about" className="hover:text-red-700">About</a>
-        <a href="#services" className="hover:text-red-700">Services</a>
+        <a href="#projects" className="hover:text-red-700">Services</a>
         <a href="#contact" className="hover:text-red-700">Contact</a>
+        <button className='bg-red-500 px-4 py-2 rounded-md'>
+          Download CV
+          </button>
       </nav>
 
       {/* Mobile menu icon */}
-      <div className="md:hidden">
+      {
+        isOpen ? <div className="md:hidden">
+        <button onClick={() => setIsOpen(!isOpen)}>
+          <IoClose size={24} />
+        </button>
+      </div> :<div className="md:hidden">
         <button onClick={() => setIsOpen(!isOpen)}>
           <FiMenu size={24} />
         </button>
       </div>
+      }
 
       {/* Dropdown menu for small devices */}
       {isOpen && (
@@ -34,7 +44,11 @@ const Header = () => {
             <a href="#about" onClick={() => setIsOpen(false)} className="hover:text-red-700">About</a>
             <a href="#services" onClick={() => setIsOpen(false)} className="hover:text-red-700">Services</a>
             <a href="#contact" onClick={() => setIsOpen(false)} className="hover:text-red-700">Contact</a>
+            <button>
+              Download CV
+            </button>
           </nav>
+
         </div>
       )}
     </header>
