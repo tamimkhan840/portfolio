@@ -4,9 +4,11 @@ import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Hero from "./Components/Hero/Hero";
 import Projects from "./Components/Projects/Projects";
+import LocomotiveScroll from 'locomotive-scroll';
 
 
 function App() {
+  const locomotiveScroll = new LocomotiveScroll();
   return (
     <div className="bg-gray-100 text-gray-900 ">
      <div className="">

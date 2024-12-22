@@ -1,9 +1,120 @@
 import profile from "../image/imd.png";
 import { FaFacebook, FaLinkedin, FaInstagram, FaGithub, FaTwitter} from "react-icons/fa";
+import {motion, useScroll} from 'framer-motion'
+import { useEffect, useState } from "react";
 
 function Hero() {
+  const [images, setImages] = useState([
+    {
+      url: "https://i.postimg.cc/L5HmpNhf/Screenshot-2024-12-22-234735.png",
+      top: "60%",
+      left: "50%",
+      isActive: false,
+    },
+    {
+      url: "https://i.postimg.cc/V6w8qDqT/Screenshot-2024-12-22-234713.png",
+      top: "60%",
+      left: "40%",
+      isActive: false,
+    },
+    {
+      url: "https://i.postimg.cc/jSJ0BGvm/Screenshot-2024-12-22-234317.png",
+      top: "55%",
+      left: "60%",
+      isActive: false,
+    },
+    {
+      url: "https://i.postimg.cc/XJLTw37G/Screenshot-2024-12-22-234111.png",
+      top: "60%",
+      left: "30%",
+      isActive: false,
+    },
+    {
+      url: "https://i.postimg.cc/g0P5QrxL/Screenshot-2024-12-22-234042.png",
+      top: "62%",
+      left: "70%",
+      isActive: false,
+    },
+    {
+      url: "https://i.postimg.cc/gjrB8ZTQ/Screenshot-2024-12-22-233939.png",
+      top: "62%",
+      left: "25%",
+      isActive: false,
+    },
+    {
+      url: "https://i.postimg.cc/Pq467yG0/screencapture-eloquent-puffpuff-909923-netlify-app-2024-12-22-23-37-52.png",
+      top: "57%",
+      left: "75%",
+      isActive: false,
+    },
+  ]);
+
+  const { scrollYProgress } = useScroll();
+
+
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on("change", (data) => {
+      const imagesShow = (arr) => {
+        setImages((prev) =>
+          prev.map((item, index) =>
+            arr.includes(index)
+              ? { ...item, isActive: true }
+              : { ...item, isActive: false }
+          )
+        );
+      };
+
+      switch (Math.floor(data * 100)) {
+        case 0:
+          imagesShow([]);
+          break;
+        case 1:
+          imagesShow([0]);
+          break;
+        case 2:
+          imagesShow([0, 1]);
+          break;
+        case 3:
+          imagesShow([0, 1, 2]);
+          break;
+        case 4:
+          imagesShow([0, 1, 2, 3]);
+          break;
+        case 5:
+          imagesShow([0, 1, 2, 3, 4]);
+          break;
+        case 6:
+          imagesShow([0, 1, 2, 3, 4, 5]);
+          break;
+        case 7:
+          imagesShow([0, 1, 2, 3, 4, 5, 6]);
+          break;
+
+        default:
+          break;
+      }
+    });
+
+    return () => unsubscribe(); // Clean up listener
+  }, [scrollYProgress]);
+
   return (
-    <section id="Home" className="text-center py-20 bg-gradient-to-b">
+    <section id="Home" className="text-center py-20 bg-gradient-to-b relative">
+      {images.map((image, index) => (
+        <motion.div
+          key={index}
+          className={`absolute z-50`}
+          style={{
+            top: image.top,
+            left: image.left,
+            opacity: image.isActive ? 1 : 0,
+            transform: `translate(-50%, -50%) scale(${image.isActive ? 1.2 : 0.8})`,
+            transition: "all 0.5s ease",
+          }}
+        >
+          <img className="w-56 rounded-md" src={image.url} alt="" />
+        </motion.div>
+      ))}
       <div className="flex flex-col items-center">
         <img src={profile} alt="Tamim Khan" className="rounded-2xl w-60  mb-4" />
         <h2 className="text-2xl">Hi</h2>
